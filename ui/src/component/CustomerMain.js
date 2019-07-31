@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 
+
 import "./CustomerMain.css"
 
 class CustomerMain extends Component{
-    state = {
-        login: "None"
-    }
-
     render(){
         const customBox = (width, height, overflow = "hidden") => {
             return {
@@ -22,7 +19,7 @@ class CustomerMain extends Component{
                     <div class="col-4 text-center mb-4">Topup</div>
                 </div>
                 <div class="row justify-content-around">
-                    <div class="col-4 border border-width"  style = {customBox(300, 300)} >
+                    <div class="col-4 border border-width"  style = {customBox(300, 300, "auto")} >
                         <div className = "container">
 
                         </div>
@@ -38,7 +35,7 @@ class CustomerMain extends Component{
                                 </div>
                             </div>
                             <div className = "text-center">
-                                <button type="submit" className="btn btn-primary">TopUp</button>
+                                <button type="submit" className="btn btn-primary" on >TopUp</button>
                             </div>  
                         </div>    
                     </div>

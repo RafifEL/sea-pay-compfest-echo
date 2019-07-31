@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
-  // Route,
-  // Link
+  Route,
+  //Link
 } from 'react-router-dom';
 
 
@@ -38,8 +38,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar/>
-
-          <CustomerMain />
+          <Route exact path='/' component= {Login} ></Route>
+          <Route path='/customerhome' component= {CustomerMain} ></Route>     
         </div>
       </Router>
     );
