@@ -3,7 +3,7 @@ import React from 'react';
 
 const Login = (props) => {
     const submitClick = (e) => {
-        e.preventDefault();
+        //e.preventDefault();
         props.history.push('/customerhome')
     }
     return (

@@ -10,6 +10,7 @@ import {
 import Login from "./component/Login"
 import NavBar from "./component/NavBar"
 import CustomerMain from './component/CustomerMain';
+import SelectItems from './component/SelectItems'
 
 import './App.css';
 
@@ -38,6 +39,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar/>
+          {/* <SelectItems/> */}
           <Route exact path='/' component= {Login} ></Route>
           <Route path='/customerhome' component= {CustomerMain} ></Route>     
         </div>

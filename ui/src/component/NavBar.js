@@ -12,10 +12,10 @@ class NavBar extends Component{
                 <span className="navbar-brand mb-0 h1">SEA Pay</span>
             </nav>
         );
-
     }
 }
 export default NavBar;
+
 
 
     
