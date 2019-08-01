@@ -30,7 +30,7 @@ const customMerchText = (storeName, shortDesc) =>{
         );
 }
 
-const customVouchText = (nameVouch, disc, owned) =>{
+export const customVouchText = (nameVouch, disc, owned) =>{
     return(
         <div className="row m-1" style = {{height: 100, overflow:"auto"}} >
             <div className = 'col border text-left'>
