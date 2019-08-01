@@ -30,17 +30,18 @@ const customMerchText = (storeName, shortDesc) =>{
         );
 }
 
-const CustomVouchBoc = () =>{
+const customVouchText = (nameVouch, disc, owned) =>{
     return(
         <div className="row m-1" style = {{height: 100, overflow:"auto"}} >
             <div className = 'col border text-left'>
-                <h5>Merchant A</h5>
-                <h6>Short desc &#9;:</h6>
-                <pre style = {{fontSize:12, marginLeft:10}}>Menjual Sepatu</pre>
+                    <h5>Voucher {nameVouch}</h5>
+                    <h6>Discount {disc}%</h6>
+                    <small>Owned : {owned}</small>
             </div>        
         </div>
     );
 }
+
  
 const customBox = (width, height, overflow = "hidden") => {
     return {
@@ -89,8 +90,14 @@ export default class CustomerMain extends Component{
                     </div>
                     <div className="col text-center mb-4">
                         <h4>Vouchers</h4>
-                        <div className = "container border border-width" style = {customBox(350,300,"auto")}>
-                        </div>
+                        <form action="">
+                            <div className = "container border border-width" style = {customBox(350,300,"auto")}>
+                                {customVouchText('A', 30, 3)}
+                                {customVouchText('A', 30, 3)}
+                                {customVouchText('A', 30, 3)}
+                                {customVouchText('A', 30, 3)}
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
