@@ -18,16 +18,28 @@ const customLabelText = (label, text) =>{
         );
 }
 
-const customBoxText = () =>{
+const customMerchText = (storeName, shortDesc) =>{
     return(
-        <div className="row" style = {{height: 100}} >
-            <div className = 'col - border text-left'>
-                <h6>Merchant A</h6>
-                <p>Short desc:</p>
-                <p>Menjual Sepatu</p>
+        <div className="row m-1" style = {{height: 100, overflow:"auto"}} >
+            <div className = 'col border text-left'>
+                <h5>Merchant {storeName}</h5>
+                <h6>Short desc &#9;:</h6>
+                <pre style = {{fontSize:12, marginLeft:10}}>{shortDesc}</pre>
             </div>        
         </div>
         );
+}
+
+const CustomVouchBoc = () =>{
+    return(
+        <div className="row m-1" style = {{height: 100, overflow:"auto"}} >
+            <div className = 'col border text-left'>
+                <h5>Merchant A</h5>
+                <h6>Short desc &#9;:</h6>
+                <pre style = {{fontSize:12, marginLeft:10}}>Menjual Sepatu</pre>
+            </div>        
+        </div>
+    );
 }
  
 const customBox = (width, height, overflow = "hidden") => {
@@ -69,16 +81,15 @@ export default class CustomerMain extends Component{
                     <div className="col text-center mb-4">
                         <h4>Select Merchant</h4>
                         <div className = "container border border-width" style = {customBox(350,300,"auto")}>
-                            <div className= 'container' style = {customBox(290, 40)}>
-                            </div>
+                            {customMerchText('A', 'SSNKSQM')}
+                            {customMerchText('B', 'SSLNJKL')}
+                            {customMerchText('C', 'SSKNKLN')}
+                            {customMerchText('D', 'SSJIOJIOJ')}
                         </div>
                     </div>
                     <div className="col text-center mb-4">
                         <h4>Vouchers</h4>
                         <div className = "container border border-width" style = {customBox(350,300,"auto")}>
-                            <div className= 'container' style = {customBox(290, 40)}>
-                                {customBoxText()}
-                            </div>
                         </div>
                     </div>
                 </div>
