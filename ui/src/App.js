@@ -39,9 +39,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar/>
-          {/* <SelectItems/> */}
-          <Route exact path='/' component= {Login} ></Route>
-          <Route path='/customerhome' component= {CustomerMain} ></Route>     
+          <SelectItems/>
+          {/* <Route exact path='/' component= {Login} ></Route>
+          <Route path='/customerhome' component= {CustomerMain} ></Route>      */}
         </div>
       </Router>
     );
