@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 import './SelectItems.css'
-import {customVouchText} from './CustomerMain'
 
 const customBox = (width, height, overflow = "hidden") => {
     return {
@@ -11,6 +10,17 @@ const customBox = (width, height, overflow = "hidden") => {
     };
 };
 
+const customItemText = (nameItem, desc, price) =>{
+    return(
+        <div className="row m-1" style = {{height: 100, overflow:"auto"}} >
+            <div className = 'col border text-left'>
+                    <h5>Item {nameItem}</h5>
+                    <h6>Dexcription {desc}</h6>
+                    <small>Price : {price}</small>
+            </div>        
+        </div>
+    );
+}
 
 
 export default class SelectItems extends Component{
@@ -27,10 +37,10 @@ export default class SelectItems extends Component{
                 </div>
                 <div className="row justify-content-around">
                     <div className="col-4 border select-items"  style = {customBox(300, 400, "auto")} > 
-                        {customVouchText('A', 200, 4)}
-                        {customVouchText('A', 200, 4)}
-                        {customVouchText('A', 200, 4)}
-                        {customVouchText('A', 200, 4)}
+                        {customItemText('A', 'asd', 4)}
+                        {customItemText('A', 'asdf', 4)}
+                        {customItemText('A', 'asdf', 4)}
+                        {customItemText('A', 'asdf', 4)}
 
                     </div>
                 </div>    
