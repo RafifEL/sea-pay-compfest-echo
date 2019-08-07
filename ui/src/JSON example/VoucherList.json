@@ -1,0 +1,6 @@
+[
+    {"name":"AkhirBulan","discount":30,"owned":3},
+    {"name":"Kemerdekaan","discount":17,"owned":17},
+    {"name":"Mahasiswa","discount":20,"owned":2},
+    {"name":"TahunBaru", "discount":50,"owned":1}
+]

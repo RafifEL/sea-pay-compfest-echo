@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 //import {withRouter} from 'react-router-dom';
 
-class Login extends Component{
+export default class LoginPage extends Component{
 
     state = {
         emailLog: null,
@@ -16,7 +16,7 @@ class Login extends Component{
     submitClick = (e) => {
         console.log(this.state);
         e.preventDefault();
-        this.props.history.push('/customerhome')
+        this.props.history.push('/customer')
     }
     render(){
         return (
@@ -37,11 +37,10 @@ class Login extends Component{
                     onChange = {this.handleChange}/>
                 </div>
                 <div className = "text-center">
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Login</button>
                 </div>     
             </form>
         </div>  
         );
     }    
 }
-export default Login;

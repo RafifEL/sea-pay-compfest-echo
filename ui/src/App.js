@@ -7,9 +7,11 @@ import {
 
 
 // import Client from "./Client";
-import Login from "./component/Login"
 import NavBar from "./component/NavBar"
-import CustomerMain from './component/CustomerMain';
+import LoginPage from "./component/LoginPage"
+import CustomerPage from './component/CustomerPage';
+import AdminPage from './component/AdminPage';
+import MerchantPage from './component/MerchantPage';
 import SelectItems from './component/SelectItems'
 
 import './App.css';
@@ -39,9 +41,11 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar/>
-          <SelectItems/>
-          {/* <Route exact path='/' component= {Login} ></Route>
-          <Route path='/customerhome' component= {CustomerMain} ></Route>      */}
+          {/* <SelectItems/> */}
+          <Route exact path='/' component= {LoginPage} ></Route>
+          <Route path='/customer' component= {CustomerPage} ></Route>  
+          <Route path='/admin' component = {AdminPage}></Route>
+          <Route path='/merchant' component = {MerchantPage}></Route>
         </div>
       </Router>
     );
