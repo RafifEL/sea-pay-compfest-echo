@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import TopUpForm from './TopUpForm.js'
 import axios from 'axios'
+import TransferForm from './TransferForm.js'
+import TransactionHistoryBoard from './TransactionHistoryBoard.js'
 
 const customBox = (width, height, overflow = "hidden") => {
     return {
@@ -29,7 +31,6 @@ export default class ProfileBoard extends Component{
     }
     customLabelText = (label, text) =>{
         return(
-
             <div className="row" style = {{height:50}}>
                 <div className="col">
                     <h6 className = 'mt-1 mb-1 text-left card-text display-5'>{label}</h6>
@@ -55,6 +56,8 @@ export default class ProfileBoard extends Component{
                 </div>
                 <h4 className= "">Topup</h4>
                 <TopUpForm/>
+                <TransferForm/>
+                <TransactionHistoryBoard/>
             </div>
         )
     }
