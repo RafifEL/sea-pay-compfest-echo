@@ -11,7 +11,7 @@ const customLabelText = (label, text) =>{
             <div className = 'col-1 '>
                 <h6 className = 'mt-1 mb-0 card-text display-5'>:</h6>
             </div>
-            <div class="col text-left">
+            <div className="col text-left">
                 <h5 className = 'mt-1 mb-1 card-text display-5'>{text}</h5>
             </div>
         </div>
@@ -42,7 +42,6 @@ export const customVouchText = (nameVouch, disc, owned) =>{
     );
 }
 
- 
 const customBox = (width, height, overflow = "hidden") => {
     return {
         width: width,
