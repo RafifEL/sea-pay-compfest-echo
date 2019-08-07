@@ -6,7 +6,7 @@ class NavBar extends Component{
         login: "None"
     }
 
-    static setToLog = () => {
+    setToLog = () => {
         this.setState({
             login: ""
         });
@@ -29,21 +29,21 @@ class NavBar extends Component{
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav ml-auto">
-                    <li className="nav-item active">
-                        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Profile
-                        </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a className="dropdown-item" href="#">Edit Profile</a>
-                            <a className="dropdown-item" href="#">My Cart</a>
-                            <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="#">Logout</a>
-                        </div>
-                    </li>
+                    <ul className="navbar-nav ml-auto" style = {this.checkState()}>
+                        <li className="nav-item active">
+                            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile
+                            </a>
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a className="dropdown-item" href="#">Edit Profile</a>
+                                <a className="dropdown-item" href="#">My Cart</a>
+                                <div className="dropdown-divider"></div>
+                                <a className="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </nav>
