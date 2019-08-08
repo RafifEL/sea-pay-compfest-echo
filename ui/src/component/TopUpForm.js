@@ -12,7 +12,7 @@ const customBox = (width, height, overflow = "hidden") => {
 export default class TopUpForm extends Component{
     render(){
         return(
-            <div className = "container border border-width" style = {customBox(350,135)}>
+            <div className = "container border border-width mb-2" style = {customBox(350,135)}>
                 <h5> Enter the Nominal :</h5>
                 <div className="input-group mb-3 mt-2 justify-content-center">
                     <div className="input-group-prepend">
