@@ -33,15 +33,12 @@ export default class TransactionHistoryBoard extends Component{
             );
     }
     render(){
-        return(
-            <div className="col text-center mb-4">
-                <h4>Transaction History</h4>
-                <div className = "container border border-width" style = {customBox(350,500,"auto")}>
-                    {this.state.merchantList.map(merchant => (
-                        this.customMerchText(merchant.name, merchant.desc)
-                    ))}
-                </div>
+        return(   
+            <div className = "container border border-width" style = {customBox(350,300,"auto")}>
+                {this.state.merchantList.map(merchant => (
+                    this.customMerchText(merchant.name, merchant.desc)
+                ))}
             </div>
-        )
+        );
     }
 }

@@ -36,7 +36,7 @@ export default class MerchantBoard extends Component{
         return(
             <div className="col text-center mb-4">
                 <h4>Select Merchant</h4>
-                <div className = "container border border-width" style = {customBox(350,500,"auto")}>
+                <div className = "container border border-width" style = {customBox(350,400,"auto")}>
                     {this.state.merchantList.map(merchant => (
                         this.customMerchText(merchant.name, merchant.desc)
                     ))}

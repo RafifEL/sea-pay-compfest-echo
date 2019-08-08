@@ -56,8 +56,9 @@ export default class ProfileBoard extends Component{
                 </div>
                 <h4 className= "">Topup</h4>
                 <TopUpForm/>
+                <h4 className= "">Transfer</h4>
                 <TransferForm/>
-                <TransactionHistoryBoard/>
+                {/* <TransactionHistoryBoard/> */}
             </div>
         )
     }

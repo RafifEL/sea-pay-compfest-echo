@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import TransactionHistoryBoard from './TransactionHistoryBoard.js'
 
 const customBox = (width, height, overflow = "hidden") => {
     return {
@@ -43,6 +44,8 @@ export default class VouchersBoard extends Component{
                         ))}
                     </div>
                 </form>
+                <h4>Transaction History</h4>
+                <TransactionHistoryBoard/>
             </div>
         )
     }

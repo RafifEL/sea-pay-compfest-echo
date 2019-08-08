@@ -10,9 +10,9 @@ export default class CustomerPage extends Component{
         return(
             <div className="container">
                 <div className="row justify-content">
+                    <ProfileBoard/>
                     <MerchantBoard/>
-                    <VoucherBoard/>   
-                    <ProfileBoard/>     
+                    <VoucherBoard/>             
                 </div>
             </div>
         );
