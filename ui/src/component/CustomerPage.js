@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import "./CustomerPage.css"
 import ProfileBoard from './ProfileBoard.js'
 import MerchantBoard from './MerchantBoard.js'
-import VoucherBoard from './VoucherBoard.js'
+import TransactionVoucherBoard from  './TransactionVoucherBoard'
 
 export default class CustomerPage extends Component{
     render(){
@@ -12,7 +12,7 @@ export default class CustomerPage extends Component{
                 <div className="row justify-content">
                     <ProfileBoard/>
                     <MerchantBoard/>
-                    <VoucherBoard/>             
+                    <TransactionVoucherBoard/>             
                 </div>
             </div>
         );
