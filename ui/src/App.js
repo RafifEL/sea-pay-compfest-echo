@@ -10,8 +10,8 @@ import {
 import NavBar from "./component/NavBar"
 import LoginPage from "./component/LoginPage"
 import CustomerPage from './component/CustomerPage/CustomerPage';
-import AdminPage from './component/AdminPage';
-import MerchantPage from './component/MerchantPage';
+import AdminPage from './component/AdminPage/AdminPage';
+import MerchantPage from './component/MerchantPage/MerchantPage';
 import SelectItems from './component/SelectItems'
 
 import './App.css';
