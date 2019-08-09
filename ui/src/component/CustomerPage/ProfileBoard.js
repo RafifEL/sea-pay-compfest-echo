@@ -47,7 +47,7 @@ export default class ProfileBoard extends Component{
     render(){
         return(
             <div className="col text-center mb-4">
-                <h4>Profile</h4>
+                <h4>Information</h4>
                 <div className = "container border border-width" style = {customBox(350,205)}>
                     {this.customLabelText('Nama', this.state.profile.name)}
                     {this.customLabelText('Balance(Rp)', this.state.profile.balance)}

@@ -9,7 +9,7 @@ import {
 // import Client from "./Client";
 import NavBar from "./component/NavBar"
 import LoginPage from "./component/LoginPage"
-import CustomerPage from './component/CustomerPage';
+import CustomerPage from './component/CustomerPage/CustomerPage';
 import AdminPage from './component/AdminPage';
 import MerchantPage from './component/MerchantPage';
 import SelectItems from './component/SelectItems'
