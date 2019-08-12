@@ -7,8 +7,10 @@ import {
 
 
 // import Client from "./Client";
-import NavBar from "./component/NavBar"
-import LoginPage from "./component/LoginPage"
+import NavBar from "./component/NavBar";
+import LoginPage from "./component/LoginPage";
+import MerchantRegist from "./component/MerchantRegist"
+import CustomerRegist from "./component/CustomerRegist"
 import CustomerPage from './component/CustomerPage/CustomerPage';
 import AdminPage from './component/AdminPage/AdminPage';
 import MerchantPage from './component/MerchantPage/MerchantPage';
@@ -43,6 +45,8 @@ class App extends Component {
           <NavBar/>
           {/* <SelectItems/> */}
           <Route exact path='/' component= {LoginPage} ></Route>
+          <Route path='/merchant-sign-up' component= {MerchantRegist} ></Route>
+          <Route path='/customer-sign-up' component= {CustomerRegist} ></Route>   
           <Route path='/customer' component= {CustomerPage} ></Route>  
           <Route path='/admin' component = {AdminPage}></Route>
           <Route path='/merchant' component = {MerchantPage}></Route>
