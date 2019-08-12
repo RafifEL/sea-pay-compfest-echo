@@ -15,11 +15,11 @@ export default class AddVoucherForm extends Component{
                 <h5> Add Voucher :</h5>
                 <div className="input-group mb-3 mt-2 justify-content-center">
                     <div className="input-group-prepend">
-                        <span className="input-group-text">Name</span>
+                        <span className="input-group-text" style = {{width: 120}}>Name</span>
                         <input type="text" className="form-control " aria-label="Amount (to the nearest dollar)"/>  
                     </div>
                     <div className="input-group-prepend">
-                        <span className="input-group-text">Discount</span>
+                        <span className="input-group-text" style = {{width: 120}}>Discount</span>
                         <input type="text" className="form-control " aria-label="Amount (to the nearest dollar)"/>  
                     </div>
                 </div>
