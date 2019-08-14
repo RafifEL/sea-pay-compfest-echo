@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import Voucher from './Voucher';
 // import TransactionHistoryBoard from './TransactionHistoryBoard.js'
 
 const customBox = (width, height, overflow = "hidden") => {
@@ -22,23 +23,12 @@ export default class VouchersBoard extends Component{
             })
         })
     }
-    customVoucherText = (name, discount, owned) =>{
-        return(
-            <div className="row m-1" style = {{height: 100, overflow:"auto"}} >
-                <div className = 'col border text-left'>
-                        <h5>Voucher {name}</h5>
-                        <h6>Discount {discount}%</h6>
-                        <small>Owned : {owned}</small>
-                </div>        
-            </div>
-        );
-    }
     render(){
         return(
             <form action="">
                 <div className = "container border border-width" style = {customBox(350,300,"auto")}>
                     {this.state.voucherList.map(voucher => (
-                        this.customVoucherText(voucher.name, voucher.discount, voucher.owned)
+                        <Voucher name = {voucher.name} discount = {voucher.discount} owned = {voucher.owned}/>
                     ))}
                 </div>
             </form>
