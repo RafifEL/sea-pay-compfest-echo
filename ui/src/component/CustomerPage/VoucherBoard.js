@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import Voucher from './Voucher';
-// import TransactionHistoryBoard from './TransactionHistoryBoard.js'
 
 const customBox = (width, height, overflow = "hidden") => {
     return {
