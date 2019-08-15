@@ -1,30 +1,27 @@
 package module;
 
-public class Merchant {
+public class Merchant extends User {
     private boolean Accepted = false;
-    private String id;
-    private String name;
-    private String password;
     private String address;
-    private String email;
     private String phoneNum;
     private Wallet wallet;
 
-    public Merchant(String name, String email, String password){
-        this.name = name;
-        this.password = password;
-        this.email = email;
+    public Merchant(String name, String email, String password, String address, String phoneNum){
+        super(name, email, password);
+        this.address = address;
+        this.phoneNum = phoneNum;
+        this.listOfUser.add(this);
     }
 
-    public void setAddress(String address) {
+    private void setAddress(String address) {
         this.address = address;
     }
 
-    public void setPhoneNum(String phoneNum) {
+    private void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
 
-    public void setAccepted(boolean accepted) {
+    private void setAccepted(boolean accepted) {
         this.Accepted = accepted;
     }
 }

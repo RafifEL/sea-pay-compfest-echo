@@ -2,28 +2,24 @@ package module;
 
 import java.math.BigDecimal;
 
-public class Customer {
-    private String id;
-    private String name;
-    private String password;
+public class Customer extends User {
     private String address;
-    private String email;
     private String phoneNum;
     private Wallet wallet;
 
     public Customer(String name, String email, String password){
-        this.name = name;
-        this.password = password;
-        this.email = email;
+        super(name, email, password);
+        this.wallet = new Wallet();
+        this.listOfUser.add(this);
     }
-
-    public void setAddress(String address) {
+    private void setAddress(String address) {
         this.address = address;
     }
 
-    public void setPhoneNum(String phoneNum) {
+    private void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
+
 
 
 }
