@@ -45,8 +45,6 @@ public class TransactionBuilder {
     }
 
     public Transaction createTransaction() {
-        Transaction transaction = new Transaction(type, id, idSender, idReceiver, amount, nameSender, nameReceiver);
-        transaction.addTransaction();
-        return transaction;
+        return new Transaction(type, id, idSender, idReceiver, amount, nameSender, nameReceiver);
     }
 }
