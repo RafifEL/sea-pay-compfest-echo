@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios'
+import TransactionHistory from './TransactionHistory';
 
 const customBox = (width, height, overflow = "hidden") => {
     return {
@@ -11,34 +12,29 @@ const customBox = (width, height, overflow = "hidden") => {
 
 export default class TransactionHistoryBoard extends Component{
     state={
-        merchantList: []
+        transactionHistoryList: []
     }
     componentDidMount(){
-        axios.get('http://www.json-generator.com/api/json/get/cfxZAVZQia?indent=2')
+        axios.get('http://www.json-generator.com/api/json/get/bVDvTRWfaW?indent=2')
         .then(response =>{
             this.setState({
-                merchantList: response.data
+                transactionHistoryList: response.data
             })
         })
     }
-    customMerchText = (storeName, shortDesc) =>{
-        return(
-            <div className="row m-1" style = {{height: 100, overflow:"auto"}} >
-                <div className = 'col border text-left'>
-                    <h5>Merchant {storeName}</h5>
-                    <h6>Short desc &#9;:</h6>
-                    <pre style = {{fontSize:12, marginLeft:10}}>{shortDesc}</pre>
-                </div>        
-            </div>
-            );
-    }
     render(){
-        return(   
-            <div className = "container border border-width" style = {customBox(350,300,"auto")}>
-                {this.state.merchantList.map(merchant => (
-                    this.customMerchText(merchant.name, merchant.desc)
-                ))}
+        return(
+            <div className="col text-center mb-4">  
+                <div className = "container border border-width" style = {customBox(350,300,"auto")}>
+                    {this.state.transactionHistoryList.map(transactionHistory => (
+                        <TransactionHistory 
+                        type = {transactionHistory.type} 
+                        target = {transactionHistory.target}
+                        amount = {transactionHistory.amount}
+                    />
+                    ))}
+                </div>
             </div>
-        );
+        )
     }
 }

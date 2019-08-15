@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import './SelectItems.css'
+import Item from './Item';
 
 const customBox = (width, height, overflow = "hidden") => {
     return {
@@ -9,19 +10,6 @@ const customBox = (width, height, overflow = "hidden") => {
         overflow: overflow
     };
 };
-
-const customItemText = (nameItem, desc, price) =>{
-    return(
-        <div className="row m-1" style = {{height: 100, overflow:"auto"}} >
-            <div className = 'col border text-left'>
-                    <h5>Item {nameItem}</h5>
-                    <h6>Dexcription {desc}</h6>
-                    <small>Price : {price}</small>
-            </div>        
-        </div>
-    );
-}
-
 
 export default class SelectItems extends Component{
     state = {
@@ -37,11 +25,10 @@ export default class SelectItems extends Component{
                 </div>
                 <div className="row justify-content-around">
                     <div className="col-4 border select-items"  style = {customBox(300, 400, "auto")} > 
-                        {customItemText('A', 'asd', 4)}
-                        {customItemText('A', 'asdf', 4)}
-                        {customItemText('A', 'asdf', 4)}
-                        {customItemText('A', 'asdf', 4)}
-
+                        <Item name = {"Buku Bagus"} description = {"mahal tapi"} price = {100000}/>
+                        <Item name = {"Buku mahal"} description = {"mahal tapi"} price = {220000}/>
+                        <Item name = {"Buku kecil"} description = {"mahal tapi"} price = {150000}/>
+                        <Item name = {"Buku Jelek"} description = {"murah tapi"} price = {10000}/>
                     </div>
                 </div>    
             </div>
