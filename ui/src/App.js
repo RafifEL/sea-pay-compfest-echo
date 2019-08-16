@@ -14,7 +14,7 @@ import CustomerRegist from "./component/CustomerRegist"
 import CustomerPage from './component/CustomerPage/CustomerPage';
 import AdminPage from './component/AdminPage/AdminPage';
 import MerchantPage from './component/MerchantPage/MerchantPage';
-import SelectItems from './component/CustomerPage/SelectItems'
+import SelectItems from './component/CustomerPage/Item/SelectItems'
 
 import './App.css';
 
@@ -43,13 +43,13 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar/>
-          {/* <SelectItems/> */}
-          <Route exact path='/' component= {LoginPage} ></Route>
+          <SelectItems/>
+          {/* <Route exact path='/' component= {LoginPage} ></Route>
           <Route path='/merchant-sign-up' component= {MerchantRegist} ></Route>
           <Route path='/customer-sign-up' component= {CustomerRegist} ></Route>   
           <Route path='/customer' component= {CustomerPage} ></Route>  
           <Route path='/admin' component = {AdminPage}></Route>
-          <Route path='/merchant' component = {MerchantPage}></Route>
+          <Route path='/merchant' component = {MerchantPage}></Route> */}
         </div>
       </Router>
     );
