@@ -14,7 +14,7 @@ import CustomerRegist from "./component/CustomerRegist"
 import CustomerPage from './component/CustomerPage/CustomerPage';
 import AdminPage from './component/AdminPage/AdminPage';
 import MerchantPage from './component/MerchantPage/MerchantPage';
-import SelectItems from './component/SelectItems'
+import SelectItems from './component/CustomerPage/SelectItems'
 
 import './App.css';
 
