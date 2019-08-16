@@ -24,7 +24,7 @@ export default class TransactionHistoryBoard extends Component{
     }
     render(){
         return(
-            <div className="col text-center mb-4">  
+            <div className="text-center mb-4">  
                 <div className = "container border border-width" style = {customBox(350,300,"auto")}>
                     {this.state.transactionHistoryList.map(transactionHistory => (
                         <TransactionHistory 
