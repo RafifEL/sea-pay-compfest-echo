@@ -18,12 +18,14 @@ export default class LoginPage extends Component{
     submitClick = (e) => {
         //http request
         e.preventDefault();
-        this.props.history.push({
-            pathname: '/customer',
-            state: {
-                user: this.state.user
-            }
-        })
+        if(this.state.user != null){
+            this.props.history.push({
+                pathname: '/customer',
+                state: {
+                    user: this.state.user
+                }
+            })
+        }
     }
     render(){
         return (

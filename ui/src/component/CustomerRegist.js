@@ -15,8 +15,8 @@ export default class CustomerRegist extends Component{
     }
     submitClick = (e) => {
         if(this.state.password === this.state.confirmPassword){
-            this.props.history.push("/")
             //http request
+            this.props.history.push("/")
             e.preventDefault();
         }
         e.preventDefault();
