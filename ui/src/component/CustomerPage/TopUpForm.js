@@ -4,7 +4,8 @@ import React, {Component} from 'react'
 export default class TopUpForm extends Component{
 
     state = {
-        amount: null
+        amount: null,
+        walletId: JSON.parse(localStorage.getItem("user")).walletId
     }
 
     handleChange = (e) =>{
@@ -14,7 +15,7 @@ export default class TopUpForm extends Component{
     }
     handleSubmit = (e) =>{
         e.preventDefault()
-        console.log(this.state)
+        // Axios.post(url, JSON.stringify(this.state))
     }
     
     render(){

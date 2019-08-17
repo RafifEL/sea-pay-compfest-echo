@@ -2,8 +2,9 @@ import React, {Component} from 'react'
 
 export default class TransferForm extends Component{
     state = {
-        walletId: null,
-        amount: null
+        walletId: JSON.parse(localStorage.getItem("user")).walletId,
+        amount: null,
+        receiverId: null
     }
     handleChange = (e) =>{
         this.setState({
@@ -12,15 +13,15 @@ export default class TransferForm extends Component{
     }
     handleSubmit = (e) =>{
         e.preventDefault()
-        console.log(this.state)
+        // Axios.post(url, JSON.stringify(this.state))
     }
     render(){
         return(
             <form className = "container border border-width" onSubmit = {this.handleSubmit} style = {{width: 350, height: 160}}>
                 <div className="input-group mb-3 mt-2 justify-content-center">
                     <div className="input-group-prepend mb-2">
-                        <span className="input-group-text">Wallet ID</span>
-                        <input type="text" className="form-control" id = "walletId" aria-label="Amount (to the nearest dollar)"
+                        <span className="input-group-text">Receiver Wallet ID</span>
+                        <input type="text" className="form-control" id = "receiverId" aria-label="Amount (to the nearest dollar)"
                         onChange = {this.handleChange}/>  
                     </div>
                     <div className="input-group-prepend">

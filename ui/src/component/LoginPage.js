@@ -9,11 +9,11 @@ export default class LoginPage extends Component{
         userEmail: null,
         password: null,
         user: {
-            userId: "dummy",
+            userId: null,
             userName: "dummy",
             userEmail: "dummy",
             password: "dummy",
-            walletId: "dummy"
+            walletId: null
         }
     }
 
