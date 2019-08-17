@@ -13,8 +13,9 @@ const customBox = (width, height, overflow = "hidden") => {
 
 export default class ProfileBoard extends Component{
     state = {
+        userName: JSON.parse(localStorage.getItem("user")).userName,
         wallet:{
-            name: 'DefaultName',
+            walletId : 0,
             balance: 0,
             seaPoints: 0,
             loyaltyPoints: 0
@@ -48,16 +49,16 @@ export default class ProfileBoard extends Component{
             <div className="col text-center mb-4">
                 <h4>Information</h4>
                 <div className = "container border border-width" style = {customBox(350,240)}>
-                    {this.customLabelText('Nama', this.state.wallet.name)}
+                    {this.customLabelText('Nama', this.state.userName)}
                     {this.customLabelText('Wallet Id', this.state.wallet.walletId)}
                     {this.customLabelText('Balance(Rp)', this.state.wallet.balance)}
-                    {this.customLabelText('SEA Points(Sp)', this.state.wallet.seaPoints)}
-                    {this.customLabelText('Loyal Points(Lp)', this.state.wallet.loyaltyPoints)}
+                    {this.customLabelText('SEA Points(SP)', this.state.wallet.seaPoints)}
+                    {this.customLabelText('Loyal Points(LP)', this.state.wallet.loyaltyPoints)}
                 </div>
                 <h4 className= "">Topup</h4>
                 <TopUpForm/>
                 <h4 className= "">Transfer</h4>
-                <TransferForm/>
+                 <TransferForm/>
             </div>
         )
     }

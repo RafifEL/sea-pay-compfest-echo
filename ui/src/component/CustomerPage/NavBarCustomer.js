@@ -20,7 +20,7 @@ class NavBar extends Component{
                             Profile
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <Link className="dropdown-item" href="#">Edit Profile</Link>
+                                <Link className="dropdown-item" to="/profile">Edit Profile</Link>
                                 <Link className="dropdown-item" href="#">My Cart</Link>
                                 <div className="dropdown-divider"></div>
                                 <Link className="dropdown-item" to="/">Logout</Link>

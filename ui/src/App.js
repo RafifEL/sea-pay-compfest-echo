@@ -15,6 +15,7 @@ import CustomerPage from './component/CustomerPage/CustomerPage';
 import AdminPage from './component/AdminPage/AdminPage';
 import MerchantPage from './component/MerchantPage/MerchantPage';
 import SelectItemPage from './component/CustomerPage/Item/SelectItemPage'
+import EditCustomerProfile from './component/CustomerPage/EditCustomerProfile'
 
 import './App.css';
 
@@ -51,6 +52,7 @@ class App extends Component {
           <Route path='/admin' component = {AdminPage}></Route>
           <Route path='/merchant' component = {MerchantPage}></Route>
           <Route path='/item' component = {SelectItemPage}></Route>
+          <Route path='/profile' component = {EditCustomerProfile}></Route>
         </div>
       </Router>
     );

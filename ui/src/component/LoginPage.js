@@ -7,7 +7,13 @@ export default class LoginPage extends Component{
     state = {
         userEmail: null,
         password: null,
-        user: null
+        user: {
+            userId: "dummy",
+            userName: "Dummy",
+            userEmail: "Dummy",
+            password: null,
+            walletId: null
+        }
     }
 
     handleChange = (e) =>{
@@ -16,15 +22,11 @@ export default class LoginPage extends Component{
         });     
     }
     submitClick = (e) => {
-        //http request
+        //http request to this.state.user
         e.preventDefault();
-        if(this.state.user != null){
-            this.props.history.push({
-                pathname: '/customer',
-                state: {
-                    user: this.state.user
-                }
-            })
+        localStorage.setItem("user", JSON.stringify(this.state.user))
+        if(this.state.user.userId != null){
+            this.props.history.push('/customer')
         }
     }
     render(){
