@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Axios from 'axios';
 //import {withRouter} from 'react-router-dom';
 
 export default class CustomerRegist extends Component{
@@ -15,7 +16,10 @@ export default class CustomerRegist extends Component{
     }
     submitClick = (e) => {
         if(this.state.password === this.state.confirmPassword){
-            //http request
+            // Axios.post(url, JSON.stringify(this.state))
+            // .then(response=>{
+            //     Axios.post(url, JSON.stringify(response.data.walletId))
+            // })
             this.props.history.push("/")
             e.preventDefault();
         }

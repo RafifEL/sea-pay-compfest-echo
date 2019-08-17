@@ -23,13 +23,13 @@ export default class EditCustomerProfile extends Component{
                             <h1 className = "display-5 mb-4">Profile</h1>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="email">Email address</label>
-                            <input type="email" className="form-control" id="email" aria-describedby="" placeholder="Email"
+                            <label htmlFor="userEmail">Email address</label>
+                            <input type="email" className="form-control" id="userEmail" aria-describedby="" placeholder="Email"
                             onChange = {this.handleChange} value = {this.state.userEmail}/>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="storeName">Name</label>
-                            <input type="" className="form-control" id="name" aria-describedby="" placeholder="Name"
+                            <label htmlFor="userName">Name</label>
+                            <input type="" className="form-control" id="userName" aria-describedby="" placeholder="Name"
                             onChange = {this.handleChange} value = {JSON.parse(localStorage.getItem("user")).userName}/>
                         </div>
                         <div className = "text-center">

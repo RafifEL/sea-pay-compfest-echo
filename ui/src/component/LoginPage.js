@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 //import {withRouter} from 'react-router-dom';
 import Navbar from "./NavBar"
+import Axios from 'axios';
 
 export default class LoginPage extends Component{
 
@@ -9,10 +10,10 @@ export default class LoginPage extends Component{
         password: null,
         user: {
             userId: "dummy",
-            userName: "Dummy",
-            userEmail: "Dummy",
-            password: null,
-            walletId: null
+            userName: "dummy",
+            userEmail: "dummy",
+            password: "dummy",
+            walletId: "dummy"
         }
     }
 
@@ -22,7 +23,12 @@ export default class LoginPage extends Component{
         });     
     }
     submitClick = (e) => {
-        //http request to this.state.user
+        // Axios.post(url, JSON.stringify(this.state))
+        // .then(response=>{
+        //     this.setState({
+        //         user: response.data
+        //     })
+        // })
         e.preventDefault();
         localStorage.setItem("user", JSON.stringify(this.state.user))
         if(this.state.user.userId != null){
