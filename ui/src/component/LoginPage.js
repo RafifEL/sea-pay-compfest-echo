@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 //import {withRouter} from 'react-router-dom';
+import Navbar from "./NavBar"
 
 export default class LoginPage extends Component{
 
     state = {
-        emailLog: null,
-        passwordLog: null
+        userEmail: null,
+        password: null,
+        user: null
     }
 
     handleChange = (e) =>{
@@ -14,27 +16,33 @@ export default class LoginPage extends Component{
         });     
     }
     submitClick = (e) => {
-        console.log(this.state);
+        //http request
         e.preventDefault();
-        this.props.history.push('/customer')
+        this.props.history.push({
+            pathname: '/customer',
+            state: {
+                user: this.state.user
+            }
+        })
     }
     render(){
         return (
                 <div>
+                    <Navbar></Navbar>
                     <div className = "justify-content-center row">
                         <form onSubmit = {this.submitClick}>
                             <div className = "text-primary">
                                 <h1 className = "display-5 mb-4">Welcome to SEA Pay</h1>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="emailLog">Email address</label>
-                                <input type="email" className="form-control" id="emailLog" aria-describedby="emailHelp" placeholder="Enter email"
+                                <label htmlFor="userEmail">Email address</label>
+                                <input type="email" className="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email"
                                 onChange = {this.handleChange}/>
                                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="passwordLog">Password</label>
-                                <input type="password" className="form-control" id="passwordLog" placeholder="Password"
+                                <label htmlFor="password">Password</label>
+                                <input type="password" className="form-control" id="password" placeholder="Password"
                                 onChange = {this.handleChange}/>
                             </div>
                             <div className = "text-center">
@@ -53,8 +61,6 @@ export default class LoginPage extends Component{
                         </ul>
                     </div>
                 </div>
-                
-            
         );
     }    
 }

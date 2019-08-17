@@ -7,7 +7,7 @@ import {
 
 
 // import Client from "./Client";
-import NavBar from "./component/NavBar";
+// import NavBar from "./component/NavBar";
 import LoginPage from "./component/LoginPage";
 import MerchantRegist from "./component/MerchantRegist"
 import CustomerRegist from "./component/CustomerRegist"
@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <NavBar/>
+          {/* <NavBar/> */}
           {/* <SelectItems/> */}
           <Route exact path='/' component= {LoginPage} ></Route>
           <Route path='/merchant-sign-up' component= {MerchantRegist} ></Route>

@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 
 export default class CustomerRegist extends Component{
     state = {
-        email: null,
-        name: null,
+        userEmail: null,
+        userName: null,
         password: null,
         confirmPassword: null,
     }
@@ -16,6 +16,7 @@ export default class CustomerRegist extends Component{
     submitClick = (e) => {
         if(this.state.password === this.state.confirmPassword){
             this.props.history.push("/")
+            //http request
             e.preventDefault();
         }
         e.preventDefault();
@@ -28,13 +29,13 @@ export default class CustomerRegist extends Component{
                         <h1 className = "display-5 mb-4">Customer Sign Up</h1>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="email">Email address</label>
-                        <input type="email" className="form-control" id="email" aria-describedby="" placeholder="Enter Email"
+                        <label htmlFor="userEmail">Email address</label>
+                        <input type="email" className="form-control" id="userEmail" aria-describedby="" placeholder="Enter Email"
                         onChange = {this.handleChange}/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="storeName">Name</label>
-                        <input type="" className="form-control" id="name" aria-describedby="" placeholder="name"
+                        <label htmlFor="userName">Name</label>
+                        <input type="" className="form-control" id="userName" aria-describedby="" placeholder="name"
                         onChange = {this.handleChange}/>
                     </div>
                     <div className="form-group">
