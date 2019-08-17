@@ -9,9 +9,10 @@ public class Customer extends User {
 
     public Customer(String name, String email, String password){
         super(name, email, password);
-        this.wallet = new Wallet();
+        this.wallet = new Wallet(this.id);
         this.listOfUser.add(this);
     }
+    
     private void setAddress(String address) {
         this.address = address;
     }
@@ -19,7 +20,4 @@ public class Customer extends User {
     private void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
-
-
-
 }
