@@ -13,7 +13,7 @@ export default class SelectItemPage extends Component{
             <div className = 'container'>
                 <div className="row justify-content-around">
                     <ProfileBoard/>
-                    <SelectItems/>   
+                    <SelectItems merchantId={this.props.location.state.id}/>   
                     <MyCart/>     
                 </div>  
             </div>

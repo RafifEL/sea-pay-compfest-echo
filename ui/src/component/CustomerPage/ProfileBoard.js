@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import TopUpForm from './TopUpForm.js'
 import axios from 'axios'
 import TransferForm from './TransferForm.js'
-import TransactionHistoryBoard from './TransactionHistoryBoard.js'
 
 const customBox = (width, height, overflow = "hidden") => {
     return {
@@ -48,8 +47,9 @@ export default class ProfileBoard extends Component{
         return(
             <div className="col text-center mb-4">
                 <h4>Information</h4>
-                <div className = "container border border-width" style = {customBox(350,205)}>
+                <div className = "container border border-width" style = {customBox(350,240)}>
                     {this.customLabelText('Nama', this.state.profile.name)}
+                    {this.customLabelText('Wallet Id', this.state.profile.walletId)}
                     {this.customLabelText('Balance(Rp)', this.state.profile.balance)}
                     {this.customLabelText('SEA Points(Sp)', this.state.profile.seaPoints)}
                     {this.customLabelText('Loyal Points(Lp)', this.state.profile.loyaltyPoints)}
@@ -58,7 +58,6 @@ export default class ProfileBoard extends Component{
                 <TopUpForm/>
                 <h4 className= "">Transfer</h4>
                 <TransferForm/>
-                {/* <TransactionHistoryBoard/> */}
             </div>
         )
     }

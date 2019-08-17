@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 export default class Item extends Component{
     checkAmount = () =>{
         if(this.props.amount != null){
-            this.props.amount += 1;
             return "Amount : " + this.props.amount;
             
         }

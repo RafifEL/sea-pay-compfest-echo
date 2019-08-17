@@ -4,8 +4,7 @@ import React, {Component} from 'react';
 export default class CustomerRegist extends Component{
     state = {
         email: null,
-        firstName: null,
-        lastName: null,
+        name: null,
         password: null,
         confirmPassword: null,
     }
@@ -15,7 +14,10 @@ export default class CustomerRegist extends Component{
         });     
     }
     submitClick = (e) => {
-        console.log(this.state);
+        if(this.state.password === this.state.confirmPassword){
+            this.props.history.push("/")
+            e.preventDefault();
+        }
         e.preventDefault();
     }
     render(){
@@ -31,13 +33,8 @@ export default class CustomerRegist extends Component{
                         onChange = {this.handleChange}/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="storeName">First Name</label>
-                        <input type="" className="form-control" id="firstName" aria-describedby="" placeholder="First Name"
-                        onChange = {this.handleChange}/>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="storeName">Last Name</label>
-                        <input type="" className="form-control" id="lastName" aria-describedby="" placeholder="Last Name"
+                        <label htmlFor="storeName">Name</label>
+                        <input type="" className="form-control" id="name" aria-describedby="" placeholder="name"
                         onChange = {this.handleChange}/>
                     </div>
                     <div className="form-group">

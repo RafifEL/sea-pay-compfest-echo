@@ -16,7 +16,9 @@ export default class MerchantRegist extends Component{
         });     
     }
     submitClick = (e) => {
-        console.log(this.state);
+        if(this.state.password === this.state.confirmPassword){
+            this.props.history.push('/')
+        }
         e.preventDefault();
     }
     render(){
