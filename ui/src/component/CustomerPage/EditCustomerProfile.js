@@ -10,7 +10,7 @@ export default class EditCustomerProfile extends Component{
         });     
     }
     submitClick = (e) => {
-        
+        //Axios.patch(url, JSON.stringify(this.state))
         e.preventDefault();
     }
     render(){
