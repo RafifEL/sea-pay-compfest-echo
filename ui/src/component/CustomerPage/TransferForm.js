@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import Axios from 'axios'
 export default class TransferForm extends Component{
     state = {
         walletId: JSON.parse(localStorage.getItem("user")).walletId,
@@ -8,12 +8,14 @@ export default class TransferForm extends Component{
     }
     handleChange = (e) =>{
         this.setState({
-            [e.target.id]: e.target.value
+            [e.target.id]: parseInt(e.target.value)
         });     
     }
     handleSubmit = (e) =>{
         e.preventDefault()
-        // Axios.post(url, JSON.stringify(this.state))
+        console.log(this.state)
+        Axios.post("http://localhost:8189/walletservice/transfer",this.state)
+        window.location.reload()
     }
     render(){
         return(

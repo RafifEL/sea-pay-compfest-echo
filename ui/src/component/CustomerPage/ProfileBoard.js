@@ -15,14 +15,14 @@ export default class ProfileBoard extends Component{
     state = {
         userName: JSON.parse(localStorage.getItem("user")).userName,
         wallet:{
-            walletId : 0,
+            walletId : JSON.parse(localStorage.getItem("user")).walletId,
             balance: 0,
             seaPoints: 0,
             loyaltyPoints: 0
         }
     }
     componentDidMount(){
-        axios.get('http://www.json-generator.com/api/json/get/cghfdloRTS?indent=2')
+        axios.get('http://localhost:8189/walletservice/wallets/'+this.state.wallet.walletId)
         .then(response=>{
             this.setState({
                 wallet: response.data

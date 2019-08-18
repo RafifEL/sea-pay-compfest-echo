@@ -7,14 +7,7 @@ export default class LoginPage extends Component{
 
     state = {
         userEmail: null,
-        password: null,
-        user: {
-            userId: null,
-            userName: "dummy",
-            userEmail: "dummy",
-            password: "dummy",
-            walletId: null
-        }
+        password: null
     }
 
     handleChange = (e) =>{
@@ -23,17 +16,14 @@ export default class LoginPage extends Component{
         });     
     }
     submitClick = (e) => {
-        // Axios.post(url, JSON.stringify(this.state))
-        // .then(response=>{
-        //     this.setState({
-        //         user: response.data
-        //     })
-        // })
         e.preventDefault();
-        localStorage.setItem("user", JSON.stringify(this.state.user))
-        if(this.state.user.userId != null){
-            this.props.history.push('/customer')
-        }
+        Axios.post("http://localhost:8188/userservice/login", this.state)
+        .then(response=>{
+            localStorage.setItem("user", JSON.stringify(response.data)) 
+            if(JSON.parse(localStorage.getItem("user")).userId != null){
+                this.props.history.push('/customer')
+            }
+        })
     }
     render(){
         return (

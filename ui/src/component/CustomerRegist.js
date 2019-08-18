@@ -8,6 +8,7 @@ export default class CustomerRegist extends Component{
         userName: null,
         password: null,
         confirmPassword: null,
+        walletId: null
     }
     handleChange = (e) =>{
         this.setState({
@@ -15,15 +16,17 @@ export default class CustomerRegist extends Component{
         });     
     }
     submitClick = (e) => {
-        if(this.state.password === this.state.confirmPassword){
-            // Axios.post(url, JSON.stringify(this.state))
-            // .then(response=>{
-            //     Axios.post(url, JSON.stringify(response.data.walletId))
-            // })
-            this.props.history.push("/")
-            e.preventDefault();
-        }
         e.preventDefault();
+        if(this.state.password === this.state.confirmPassword){
+            Axios.post("http://localhost:8189/walletservice/wallet/register",{balance: 0})
+            .then(response=>{
+                this.setState({
+                    walletId: response.data.walletId
+                })
+                Axios.post("http://localhost:8188/userservice/register", this.state)
+                this.props.history.push("/")
+            })
+        }
     }
     render(){
         return (

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import Axios from 'axios'
 
 export default class TopUpForm extends Component{
 
@@ -10,12 +10,13 @@ export default class TopUpForm extends Component{
 
     handleChange = (e) =>{
         this.setState({
-            [e.target.id]: e.target.value
+            [e.target.id]: parseInt([e.target.value])
         });     
     }
     handleSubmit = (e) =>{
         e.preventDefault()
-        // Axios.post(url, JSON.stringify(this.state))
+        Axios.post("http://localhost:8189/walletservice/topup", this.state)
+        window.location.reload()       
     }
     
     render(){
@@ -25,7 +26,7 @@ export default class TopUpForm extends Component{
                 <div className="input-group mb-3 mt-2 justify-content-center">
                     <div className="input-group-prepend">
                         <span className="input-group-text">Rp</span>
-                        <input type="text" className="form-control " id = "amount" aria-label="Amount (to the nearest dollar)"
+                        <input type="number" className="form-control " id = "amount" aria-label="Amount (to the nearest dollar)"
                         onChange = {this.handleChange}/>  
                     </div>
                 </div>
@@ -35,4 +36,5 @@ export default class TopUpForm extends Component{
             </form>
         )
     }
+
 }

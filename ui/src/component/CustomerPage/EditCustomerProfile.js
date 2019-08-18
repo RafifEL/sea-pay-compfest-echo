@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Axios from 'axios'
 import NavBarCustomer from "./NavBarCustomer"
 //import {withRouter} from 'react-router-dom';
 
@@ -10,8 +11,9 @@ export default class EditCustomerProfile extends Component{
         });     
     }
     submitClick = (e) => {
-        //Axios.patch(url, JSON.stringify(this.state))
-        e.preventDefault();
+        e.preventDefault()
+        localStorage.setItem("user",JSON.stringify(this.state))
+        Axios.post("http://localhost:8188/userservice/update", this.state)
     }
     render(){
         return (
@@ -30,7 +32,7 @@ export default class EditCustomerProfile extends Component{
                         <div className="form-group">
                             <label htmlFor="userName">Name</label>
                             <input type="" className="form-control" id="userName" aria-describedby="" placeholder="Name"
-                            onChange = {this.handleChange} value = {JSON.parse(localStorage.getItem("user")).userName}/>
+                            onChange = {this.handleChange} value = {this.state.userName}/>
                         </div>
                         <div className = "text-center">
                             <button type="submit" className="btn btn-primary">Save</button>
